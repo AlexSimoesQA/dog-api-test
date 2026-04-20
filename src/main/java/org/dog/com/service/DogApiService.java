@@ -20,19 +20,31 @@ public class DogApiService {
                 given()
                         .spec(requestSpecification)
                         .when()
-                        .get(BREEDS_LIST_ALL_PATH)
+                        .get(BREEDS_PATH + LIST_PATH + ALL_PATH)
                         .then()
                         .statusCode(SC_OK)
                         .extract()
                         .response();
     }
 
-    public Response listBreedImages(String breed) {
+    public Response listBreedImages(String breed, int status) {
         return
                 given()
                         .spec(requestSpecification)
                         .when()
                         .get(BREED_PATH + "/" + breed + IMAGES_PATH)
+                        .then()
+                        .statusCode(status)
+                        .extract()
+                        .response();
+    }
+
+    public Response getBreedsImageRandom() {
+        return
+                given()
+                        .spec(requestSpecification)
+                        .when()
+                        .get(BREEDS_PATH + IMAGE_PATH + RANDOM_PATH)
                         .then()
                         .statusCode(SC_OK)
                         .extract()

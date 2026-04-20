@@ -12,4 +12,13 @@ public class DogApiDataProvider {
         };
     }
 
+    @DataProvider()
+    public Object[][] nonExistentBreedImages() {
+        return new Object[][] {
+                {"aaa"},
+                {"123"},
+                {null}
+        };
+    }
+
 }
