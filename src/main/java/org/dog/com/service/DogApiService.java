@@ -20,7 +20,19 @@ public class DogApiService {
                 given()
                         .spec(requestSpecification)
                         .when()
-                        .get(BREEDS_LIST_ALL)
+                        .get(BREEDS_LIST_ALL_PATH)
+                        .then()
+                        .statusCode(SC_OK)
+                        .extract()
+                        .response();
+    }
+
+    public Response listBreedImages(String breed) {
+        return
+                given()
+                        .spec(requestSpecification)
+                        .when()
+                        .get(BREED_PATH + "/" + breed + IMAGES_PATH)
                         .then()
                         .statusCode(SC_OK)
                         .extract()
