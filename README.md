@@ -34,6 +34,32 @@ Também é possível executar os testes via linha de comando utilizando Maven:
 mvn -B test -Dtest=org.dog.com.acceptance.AcceptanceTest
 ```
 
+## 📊 Gerando relatório com Allure
+
+Este projeto utiliza o Allure para geração de relatórios de execução dos testes.
+
+### 🔹 Passo 1: Executar os testes
+
+```bash
+mvn clean test
+```
+
+Após a execução, será gerada a pasta:
+
+`
+target/allure-results
+`
+### 🔹 Passo 2: Gerar e visualizar o relatório
+
+```bash
+mvn allure:serve
+```
+
+👉 Esse comando irá:
+
+- gerar o relatório automaticamente
+- abrir no navegador
+
 ## Tecnologias utilizadas
 
 - **Java 17**
